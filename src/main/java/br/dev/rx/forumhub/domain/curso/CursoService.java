@@ -40,7 +40,7 @@ public class CursoService {
     public void atualizar(Long cursoId, DadosDetalhamentoCurso dados) {
         Optional<Curso> optionalCurso = repository.findById(cursoId);
         if (optionalCurso.isEmpty()) {
-            throw new IllegalStateException("Curso não encontrado com ID: " + cursoId);
+            throw new IllegalStateException("Curso não encontrado");
         }
         Curso curso = optionalCurso.get();
 

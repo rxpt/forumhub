@@ -35,7 +35,7 @@ public class RespostaService {
             Resposta resposta = dados.toEntity(autor,topico,dataCriacao);
             repository.save(resposta);
         } else {
-            throw new IllegalArgumentException("Tópico inativo. Resposta não foi salva");
+            throw new IllegalArgumentException("Tópico fechado, não é possível adicionar respostas");
         }
     }
 }

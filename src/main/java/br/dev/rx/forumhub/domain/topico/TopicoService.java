@@ -107,7 +107,7 @@ public class TopicoService {
         try {
             repository.save(existingTopico);
         } catch (DataIntegrityViolationException e) {
-            throw new IllegalArgumentException("Título ou mensagem não podem ser nulos", e);
+            throw new IllegalArgumentException("Título e Mensagem já existem");
         }
     }
 

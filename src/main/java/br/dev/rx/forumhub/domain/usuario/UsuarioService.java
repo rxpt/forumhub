@@ -25,11 +25,11 @@ public class UsuarioService {
     public Long cadastrar(DadosCadastroUsuario dados){
 
         if (dados.login() == null || dados.senha() == null){
-            throw new IllegalArgumentException("Login e senha são obrigatórios");
+            throw new IllegalArgumentException("Login e Senha são obrigatórios.");
         }
 
         if (repository.existsByLogin(dados.login())){
-            throw new IllegalArgumentException("Email já cadastrado para outro usuário, utilize outro email.");
+            throw new IllegalArgumentException("Email já cadastrado.");
         }
 
         Usuario usuario = new Usuario();
@@ -81,7 +81,7 @@ public class UsuarioService {
     public Usuario findByLogin(String login) {
         Usuario usuario = (Usuario) repository.findByLogin(login);
         if (usuario == null) {
-            throw new IllegalArgumentException("Usuário não encontrado com login: " + login);
+            throw new IllegalArgumentException("Usuário não encontrado");
         }
         return usuario;
     }

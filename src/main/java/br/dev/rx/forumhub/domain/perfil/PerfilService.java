@@ -35,7 +35,7 @@ public class PerfilService {
         Optional<Perfil> optionalPerfil = repository.findById(perfilId);
 
         if (optionalPerfil.isEmpty()) {
-            throw new IllegalStateException("Perfil não encontrado com ID: " + perfilId);
+            throw new IllegalStateException("Perfil não encontrado");
         }
 
         Perfil perfil = optionalPerfil.get();
